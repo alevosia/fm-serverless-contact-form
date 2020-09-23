@@ -54,9 +54,21 @@ const Form = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		console.log(state)
-
 		setStatus(PENDING)
-		setTimeout(() => setStatus(SUCCESS), 1000)
+
+		fetch('/api/contact', {
+			method: 'POST',
+			body: JSON.stringify(state),
+		})
+			.then((response) => response.json())
+			.then((response) => {
+				console.log(response)
+				setStatus(SUCCESS)
+			})
+			.catch((error) => {
+				console.error(error)
+				setStatus(ERROR)
+			})
 	}
 
 	// curried

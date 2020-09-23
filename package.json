@@ -4,13 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "gatsby develop"
+		"dev": "gatsby develop",
+		"build": "gatsby build"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"dotenv": "^8.2.0",
 		"gatsby": "^2.24.63",
+		"mailgun-js": "^0.22.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1"
 	}
